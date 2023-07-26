@@ -7,7 +7,7 @@ function useLocalStorage(key, initialData) {
     if (localStorage.getItem(key) === null) {
       localStorage.setItem(key, data);
     } else {
-      const lsData = JsON.parse(localStorage.getItem(key));
+      const lsData = JSON.parse(localStorage.getItem(key));
       setData(lsData);
     }
   }, [data]);

@@ -1,20 +1,14 @@
 import React from "react";
-import usegeceModu from "../hooks/geceModuAc";
+import usegeceModu from "../hooks/useGeceModu.js";
 
-const Navbar = () => {
-  /*   const [geceModu, ] = usegeceModu;
-   */ const toggleMode = (e) => {
-    e.preventDefault();
-    props.setGeceModu(!props.geceModu);
-  };
-
+const Navbar = (props) => {
   return (
     <nav className="navbar">
       <h1>Kripto İzleyici</h1>
       <div className="dark-mode__toggle">
         <div
-          onClick={toggleMode}
-          className={geceModu ? "toggle toggled" : "toggle"}
+          onClick={props.setGeceModu}
+          className={props.geceModu ? "toggle toggled" : "toggle"}
         />
       </div>
     </nav>

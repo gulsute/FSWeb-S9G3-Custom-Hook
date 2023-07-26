@@ -3,14 +3,12 @@ import axios from "axios";
 
 import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
-import useLocalStorage from "./hooks/localStorageKullan";
-import useGeceModu from "./hooks/geceModuAc";
+import useLocalStorage from "./hooks/useLocalStorage.js";
+import useGeceModu from "./hooks/useGeceModu";
 
 const App = () => {
   const [coinData, setCoinData] = useState([]);
-  const [geceModu, setGeceModu] = useState(false);
-
-  const [data, setData] = useLocalStorage("geceModu", gececi);
+  const [geceModu, setGeceModu] = useGeceModu(false);
 
   useEffect(() => {
     axios
